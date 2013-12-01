@@ -1,0 +1,385 @@
+@import "compass/css3";
+
+@import url(http://fonts.googleapis.com/css?family=Exo:200,400,700);
+
+*, *:after, *:before {
+	@include box-sizing(border-box);
+}
+
+.clear-fix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+// generic values
+// $col: #256091; // national dark blue
+// $col: #1272b4; // world medium blue
+// $col: #0083D7; // business light blue
+// $col: #00824A; // technology green
+$col: #D02320; // sport red
+// $col: #9C1A87; // entertainment purple
+// $col: #D11242; // life & style magenta
+// $col: #08afb7; // travel teal
+// $col: #999999; // motoring ???
+$colDrk: darken($col, 15%);
+$colLyt: lighten($col, 20%);
+$cnrRad: 5px;
+$ani: 0.5s;
+$padS: 20px;
+$padB: 50px;
+
+@mixin vendorize($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+
+@mixin pseudo{
+	position: absolute;
+	display: block;
+	content: "";
+}
+
+@mixin keyframes($aniName){
+
+    @-webkit-keyframes $aniName{
+        @content;
+    }
+    @-moz-keyframes $aniName{
+        @content;
+    }
+    @-o-keyframes $aniName{
+        @content;
+    }
+    @keyframes $aniName{
+        @content;
+    }
+}
+
+html, body{
+	height: 100%;
+	margin: 50px; // temp...
+}
+
+.module{
+	background: {
+		image: url(../img/main-bg.jpg);
+		position: 0 0;
+		repeat: no-repeat;
+	}
+	color: $col;
+	font: {
+		family: 'Exo', sans-serif;
+		weight: 400;
+		//size: 62.5%;
+	}
+	padding: 50px 20px 50px 20px;
+	position: relative;
+	width: 620px;
+
+	&:before{
+		@include pseudo;
+		bottom: 0;
+		height: 80%;
+		left: 0;
+		width: 100%;
+		@include background-image(linear-gradient(bottom, white, rgba(white, 0)));
+	}
+}
+
+h2{
+	color: $colDrk;
+	font: {
+		size: 1.5rem;
+		weight: 200;
+	}
+	padding: 0;
+	margin: 0;
+}
+
+.copy-shell{
+	background: {
+		image: url(../img/blur-bg.jpg);
+		position: -20px -50px;
+		repeat: no-repeat;
+		//size: cover;
+	}
+	font-size: 1rem;
+	//overflow: hidden;
+	position: relative;
+	@include border-radius($cnrRad $cnrRad 0 $cnrRad);
+
+	&:before{
+		@include pseudo;
+		bottom: 0;
+		height: 50px;
+		left: 5%;
+		width: 90%;
+		//z-index: -1;
+		@include border-radius(50%);
+		@include box-shadow(0 5px 20px 0 rgba(black, 0.35));
+	}
+}
+
+.question{
+	//background-color: red;
+	border: {
+		top: 1px solid white;
+		left: 1px solid white;
+		right: 1px solid white;
+	}
+	padding: 1rem;
+	position: relative;
+	@include background-image(linear-gradient(bottom, white, rgba(white, 0.5)));
+	@include border-radius($cnrRad $cnrRad 0 0);
+	@include text-shadow(1px 1px 0 white);
+
+	&:after{
+		@include pseudo;
+		bottom: 0;
+		height: 1px;
+		left: 5px;
+		width: 90%;
+		@include background-image(linear-gradient(left, rgba($col, 0), rgba($col, 0.75), rgba($col, 0)));
+	}
+}
+
+ul.answer-shell{
+	//background-color: green;
+	border: {
+		left: 1px solid white;
+		bottom: 1px solid white;
+		right: 1px solid white;
+	}
+	height: auto;
+	list-style-type: none;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	width: auto;
+	@include border-radius(0 0 0 $cnrRad);
+
+	&:before, &:after{
+		@include pseudo;
+		height: 100%;
+		pointer-events: none;
+		top: 0;
+		width: 3rem;
+		z-index: 1;
+	}
+
+	&:before{
+		left: 0;
+		@include background-image(linear-gradient(left, white, rgba(white, 0)));
+	}
+
+	&:after{
+		right: 0;
+		@include background-image(linear-gradient(right, white, rgba(white, 0)));
+	}
+
+	li{
+		background-color: rgba(white, 0.7);
+		cursor: pointer;
+		height: 2.4rem;
+		padding: 0.7rem 0 0.7rem 0;
+		position: relative;
+		width: 1000%;
+		@include background-image(linear-gradient(top, rgba(white, 0.80), rgba(white, 0.50)));
+
+		&:hover{
+			@include transition(background-color $ani ease, background-image $ani ease);
+			background-color: $colLyt;
+		}
+
+		.icon{
+			//background-color: $colDrk;
+			color: white;
+			display: table;
+			height: 1rem;
+			left: 1rem;
+			overflow: hidden;
+			position: absolute;
+			font: {
+				size: 0.75rem;
+				weight: 700;
+			}
+			text-align: center;
+			//vertical-align: middle;
+			width: 1rem;
+			z-index: 1;
+			@include border-radius(3px);
+			@include text-shadow(1px 1px 0 $colDrk);
+
+			&:before, &:after{
+				@include pseudo;
+				height: 100%;
+				width: 100%;
+				z-index: -1;
+				@include border-radius(3px);
+			}
+
+			&:before{
+				background-color: $colDrk;
+				left: 0;
+				top: 0;
+			}
+
+			&:after{
+				background-color: $col;
+				left: 1px;
+				top: 1px;
+			}
+		}
+
+		.copy{
+			padding: 0 0 0 3rem;
+			position: absolute;
+			left: 0;
+			width: auto;
+			@include text-shadow(1px 1px 0 white);
+		}
+
+		.results{
+			//background-color: white;
+			display: none; // this will be set to block via javascript...
+			padding: 0 0 0 3rem;
+			position: absolute;
+			height: 2.4rem;
+			left: 0;
+			//top: 0;
+			width: 580px;
+
+			.bar{
+				//background-color: black;
+				display: inline-block;
+				height: 1rem;
+				position: relative;
+				width: 0; // dynamicly adjusted via javascript...
+				z-index: 1;
+				@include border-radius(3px);
+
+				&:before, &:after{
+					@include pseudo;
+					height: 100%;
+					width: 100%;
+					z-index: -1;
+					@include border-radius(3px);
+				}
+
+				&:before{
+					background-color: $colDrk;
+					left: 0;
+					top: 0;
+				}
+
+				&:after{
+					background-color: $col;
+					left: 1px;
+					top: 1px;
+				}
+			}
+
+			.number{
+				display: inline-block;
+				padding: 0 0 0 1rem;
+				@include opacity(0); // faded in with the number dynamicly increasing via javascript...
+				@include text-shadow(1px 1px 0 white);
+
+				span.percentage{
+					font-size: 0.5rem;
+				}
+			}
+		}
+	}
+}
+
+.logo-shell{
+	background-color: $col;
+	/*border: {
+		bottom: 1px solid $colLyt;
+		right: 1px solid $colLyt;
+	}*/
+	height: 2.4rem;
+	position: absolute;
+	right: 20px;
+	width: auto;
+	@include border-radius(0 0 $cnrRad 0);
+
+	/*&:before{
+		@include pseudo;
+		background: {
+			image : url(../img/logo-cap.svg);
+			position: top right;
+			repeat: no-repeat;
+			size: contain;
+			color: blue;
+		}
+		fill: $col;
+		right: 100%;
+		height: 2.4rem;
+		width: 5rem;
+
+	}*/
+
+	span.tag-line{
+		color: white;
+		display: inline-block;
+		font: {
+			size: 0.5rem;
+			weight: 700;
+		}
+		//height: 100%;
+		letter-spacing: 0.1rem;
+		position: relative;
+		text-transform: uppercase;
+		@include text-shadow(1px 1px 0 $colDrk);
+
+		&:after{
+			@include pseudo;	
+			height: 1.5rem;
+			right: -0.75rem;
+			top: -0.5rem;
+			width: 2px;
+			@include background-image(linear-gradient(top, rgba($colLyt, 0), rgba($colLyt, 1), rgba($colLyt, 0)));
+		}
+	}
+
+	img.logo{
+		height: 2.4rem;
+		padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+		width: auto;
+	}
+
+	/*img.cap{
+		bottom: 0;
+		position: absolute;
+		right: 100%;
+		fill: $col;
+	}*/
+
+	.cap{
+		display: block;
+		position: absolute;
+		height: 2.4rem;
+		right: 100%;
+		bottom: 0;
+		width: auto;
+
+		path{
+			fill: $col;
+		}
+	}
+}
+
+
+
+
+
+
+
+

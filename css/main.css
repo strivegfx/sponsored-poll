@@ -1,0 +1,358 @@
+@import url(http://fonts.googleapis.com/css?family=Exo:200,400,700);
+/* line 5, ../sass/main.scss */
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 9, ../sass/main.scss */
+.clear-fix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* line 62, ../sass/main.scss */
+html, body {
+  height: 100%;
+  margin: 50px; }
+
+/* line 67, ../sass/main.scss */
+.module {
+  background-image: url(../img/main-bg.jpg);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  color: #d02320;
+  font-family: 'Exo', sans-serif;
+  font-weight: 400;
+  padding: 50px 20px 50px 20px;
+  position: relative;
+  width: 620px; }
+  /* line 83, ../sass/main.scss */
+  .module:before {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: 0;
+    height: 80%;
+    left: 0;
+    width: 100%;
+    background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0)));
+    background-image: -webkit-linear-gradient(bottom, #ffffff, rgba(255, 255, 255, 0));
+    background-image: -moz-linear-gradient(bottom, #ffffff, rgba(255, 255, 255, 0));
+    background-image: -o-linear-gradient(bottom, #ffffff, rgba(255, 255, 255, 0));
+    background-image: linear-gradient(bottom, #ffffff, rgba(255, 255, 255, 0)); }
+
+/* line 93, ../sass/main.scss */
+h2 {
+  color: #8e1816;
+  font-size: 1.5rem;
+  font-weight: 200;
+  padding: 0;
+  margin: 0; }
+
+/* line 103, ../sass/main.scss */
+.copy-shell {
+  background-image: url(../img/blur-bg.jpg);
+  background-position: -20px -50px;
+  background-repeat: no-repeat;
+  font-size: 1rem;
+  position: relative;
+  -webkit-border-radius: 5px 5px 0 5px;
+  -moz-border-radius: 5px 5px 0 5px;
+  -ms-border-radius: 5px 5px 0 5px;
+  -o-border-radius: 5px 5px 0 5px;
+  border-radius: 5px 5px 0 5px; }
+  /* line 115, ../sass/main.scss */
+  .copy-shell:before {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: 0;
+    height: 50px;
+    left: 5%;
+    width: 90%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.35);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.35); }
+
+/* line 127, ../sass/main.scss */
+.question {
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  padding: 1rem;
+  position: relative;
+  background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0.5)));
+  background-image: -webkit-linear-gradient(bottom, #ffffff, rgba(255, 255, 255, 0.5));
+  background-image: -moz-linear-gradient(bottom, #ffffff, rgba(255, 255, 255, 0.5));
+  background-image: -o-linear-gradient(bottom, #ffffff, rgba(255, 255, 255, 0.5));
+  background-image: linear-gradient(bottom, #ffffff, rgba(255, 255, 255, 0.5));
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -ms-border-radius: 5px 5px 0 0;
+  -o-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+  text-shadow: 1px 1px 0 white; }
+  /* line 140, ../sass/main.scss */
+  .question:after {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: 0;
+    height: 1px;
+    left: 5px;
+    width: 90%;
+    background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(208, 35, 32, 0)), color-stop(50%, rgba(208, 35, 32, 0.75)), color-stop(100%, rgba(208, 35, 32, 0)));
+    background-image: -webkit-linear-gradient(left, rgba(208, 35, 32, 0), rgba(208, 35, 32, 0.75), rgba(208, 35, 32, 0));
+    background-image: -moz-linear-gradient(left, rgba(208, 35, 32, 0), rgba(208, 35, 32, 0.75), rgba(208, 35, 32, 0));
+    background-image: -o-linear-gradient(left, rgba(208, 35, 32, 0), rgba(208, 35, 32, 0.75), rgba(208, 35, 32, 0));
+    background-image: linear-gradient(left, rgba(208, 35, 32, 0), rgba(208, 35, 32, 0.75), rgba(208, 35, 32, 0)); }
+
+/* line 150, ../sass/main.scss */
+ul.answer-shell {
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  height: auto;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: auto;
+  -webkit-border-radius: 0 0 0 5px;
+  -moz-border-radius: 0 0 0 5px;
+  -ms-border-radius: 0 0 0 5px;
+  -o-border-radius: 0 0 0 5px;
+  border-radius: 0 0 0 5px; }
+  /* line 166, ../sass/main.scss */
+  ul.answer-shell:before, ul.answer-shell:after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 100%;
+    pointer-events: none;
+    top: 0;
+    width: 3rem;
+    z-index: 1; }
+  /* line 175, ../sass/main.scss */
+  ul.answer-shell:before {
+    left: 0;
+    background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0)));
+    background-image: -webkit-linear-gradient(left, #ffffff, rgba(255, 255, 255, 0));
+    background-image: -moz-linear-gradient(left, #ffffff, rgba(255, 255, 255, 0));
+    background-image: -o-linear-gradient(left, #ffffff, rgba(255, 255, 255, 0));
+    background-image: linear-gradient(left, #ffffff, rgba(255, 255, 255, 0)); }
+  /* line 180, ../sass/main.scss */
+  ul.answer-shell:after {
+    right: 0;
+    background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0)));
+    background-image: -webkit-linear-gradient(right, #ffffff, rgba(255, 255, 255, 0));
+    background-image: -moz-linear-gradient(right, #ffffff, rgba(255, 255, 255, 0));
+    background-image: -o-linear-gradient(right, #ffffff, rgba(255, 255, 255, 0));
+    background-image: linear-gradient(right, #ffffff, rgba(255, 255, 255, 0)); }
+  /* line 185, ../sass/main.scss */
+  ul.answer-shell li {
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    height: 2.4rem;
+    padding: 0.7rem 0 0.7rem 0;
+    position: relative;
+    width: 1000%;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0.5)));
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+    background-image: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)); }
+    /* line 194, ../sass/main.scss */
+    ul.answer-shell li:hover {
+      -webkit-transition: background-color 0.5s ease, background-image 0.5s ease;
+      -moz-transition: background-color 0.5s ease, background-image 0.5s ease;
+      -o-transition: background-color 0.5s ease, background-image 0.5s ease;
+      transition: background-color 0.5s ease, background-image 0.5s ease;
+      background-color: #e9706d; }
+    /* line 199, ../sass/main.scss */
+    ul.answer-shell li .icon {
+      color: white;
+      display: table;
+      height: 1rem;
+      left: 1rem;
+      overflow: hidden;
+      position: absolute;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-align: center;
+      width: 1rem;
+      z-index: 1;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      border-radius: 3px;
+      text-shadow: 1px 1px 0 #8e1816; }
+      /* line 218, ../sass/main.scss */
+      ul.answer-shell li .icon:before, ul.answer-shell li .icon:after {
+        position: absolute;
+        display: block;
+        content: "";
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+        border-radius: 3px; }
+      /* line 226, ../sass/main.scss */
+      ul.answer-shell li .icon:before {
+        background-color: #8e1816;
+        left: 0;
+        top: 0; }
+      /* line 232, ../sass/main.scss */
+      ul.answer-shell li .icon:after {
+        background-color: #d02320;
+        left: 1px;
+        top: 1px; }
+    /* line 239, ../sass/main.scss */
+    ul.answer-shell li .copy {
+      padding: 0 0 0 3rem;
+      position: absolute;
+      left: 0;
+      width: auto;
+      text-shadow: 1px 1px 0 white; }
+    /* line 247, ../sass/main.scss */
+    ul.answer-shell li .results {
+      display: none;
+      padding: 0 0 0 3rem;
+      position: absolute;
+      height: 2.4rem;
+      left: 0;
+      width: 580px; }
+      /* line 257, ../sass/main.scss */
+      ul.answer-shell li .results .bar {
+        display: inline-block;
+        height: 1rem;
+        position: relative;
+        width: 0;
+        z-index: 1;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+        border-radius: 3px; }
+        /* line 266, ../sass/main.scss */
+        ul.answer-shell li .results .bar:before, ul.answer-shell li .results .bar:after {
+          position: absolute;
+          display: block;
+          content: "";
+          height: 100%;
+          width: 100%;
+          z-index: -1;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          -ms-border-radius: 3px;
+          -o-border-radius: 3px;
+          border-radius: 3px; }
+        /* line 274, ../sass/main.scss */
+        ul.answer-shell li .results .bar:before {
+          background-color: #8e1816;
+          left: 0;
+          top: 0; }
+        /* line 280, ../sass/main.scss */
+        ul.answer-shell li .results .bar:after {
+          background-color: #d02320;
+          left: 1px;
+          top: 1px; }
+      /* line 287, ../sass/main.scss */
+      ul.answer-shell li .results .number {
+        display: inline-block;
+        padding: 0 0 0 1rem;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+        opacity: 0;
+        text-shadow: 1px 1px 0 white; }
+        /* line 293, ../sass/main.scss */
+        ul.answer-shell li .results .number span.percentage {
+          font-size: 0.5rem; }
+
+/* line 301, ../sass/main.scss */
+.logo-shell {
+  background-color: #d02320;
+  /*border: {
+  	bottom: 1px solid $colLyt;
+  	right: 1px solid $colLyt;
+  }*/
+  height: 2.4rem;
+  position: absolute;
+  right: 20px;
+  width: auto;
+  -webkit-border-radius: 0 0 5px 0;
+  -moz-border-radius: 0 0 5px 0;
+  -ms-border-radius: 0 0 5px 0;
+  -o-border-radius: 0 0 5px 0;
+  border-radius: 0 0 5px 0;
+  	/*&:before{
+  		@include pseudo;
+  		background: {
+  			image : url(../img/logo-cap.svg);
+  			position: top right;
+  			repeat: no-repeat;
+  			size: contain;
+  			color: blue;
+  		}
+  		fill: $col;
+  		right: 100%;
+  		height: 2.4rem;
+  		width: 5rem;
+  
+  	}*/
+  /*img.cap{
+  	bottom: 0;
+  	position: absolute;
+  	right: 100%;
+  	fill: $col;
+  }*/ }
+  /* line 329, ../sass/main.scss */
+  .logo-shell span.tag-line {
+    color: white;
+    display: inline-block;
+    font-size: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    position: relative;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 #8e1816; }
+    /* line 342, ../sass/main.scss */
+    .logo-shell span.tag-line:after {
+      position: absolute;
+      display: block;
+      content: "";
+      height: 1.5rem;
+      right: -0.75rem;
+      top: -0.5rem;
+      width: 2px;
+      background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(233, 112, 109, 0)), color-stop(50%, #e9706d), color-stop(100%, rgba(233, 112, 109, 0)));
+      background-image: -webkit-linear-gradient(top, rgba(233, 112, 109, 0), #e9706d, rgba(233, 112, 109, 0));
+      background-image: -moz-linear-gradient(top, rgba(233, 112, 109, 0), #e9706d, rgba(233, 112, 109, 0));
+      background-image: -o-linear-gradient(top, rgba(233, 112, 109, 0), #e9706d, rgba(233, 112, 109, 0));
+      background-image: linear-gradient(top, rgba(233, 112, 109, 0), #e9706d, rgba(233, 112, 109, 0)); }
+  /* line 352, ../sass/main.scss */
+  .logo-shell img.logo {
+    height: 2.4rem;
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    width: auto; }
+  /* line 365, ../sass/main.scss */
+  .logo-shell .cap {
+    display: block;
+    position: absolute;
+    height: 2.4rem;
+    right: 100%;
+    bottom: 0;
+    width: auto; }
+    /* line 373, ../sass/main.scss */
+    .logo-shell .cap path {
+      fill: #d02320; }
