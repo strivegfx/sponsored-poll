@@ -24,11 +24,19 @@
 
         <div class="module">
 
+            <div class="advert-shell">
+                <div class="icon">x</div>
+                <a class="call-to-action" href="http://www.stuff.co.nz"><img src="img/advert.jpg"></a>
+            </div>
+
             <div class="copy-shell">
 
-                <h2 class="question">This is a question....</h2>
+                <div class="question-shell">
+                    <h2>This is a question....</h2>
+                    <div class="timer"></div>
+                </div>
 
-                <ul class="answer-shell" data-type="copy">
+                <ul class="answer-shell">
 
                     <li data-num="0">
                         <div class="icon">A</div>
@@ -65,11 +73,10 @@
                 <span class="tag-line">Brought to you by</span>
                 <img class="logo" src="img/bnz-logo.png">
                 <!--<img class="cap" src="img/logo-cap.svg">-->
-                <!--<svg class="cap" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    preserveAspectRatio="xMinYMin meet" viewBox="0 0 46 36" enable-background="new 0 0 46 36" xml:space="preserve">
+                <svg class="cap" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 46 36">
                     <path fill="#FFFFFF" d="M46,0H0c2.771,0,6.642,1.672,8.602,3.617l29.152,29.026C39.634,34.51,43.261,35.889,46,36V0z"/>
-                </svg>-->
-                <object class="cap" type="image/svg+xml" data="img/logo-cap.svg">Fall back content</object>
+                </svg>
+                <!--<object class="cap" type="image/svg+xml" data="img/logo-cap.svg">Fall back content</object>-->
             </div>
 
         </div>

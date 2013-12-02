@@ -51,6 +51,48 @@ h2 {
   margin: 0; }
 
 /* line 103, ../sass/main.scss */
+.icon {
+  color: white;
+  display: table;
+  height: 1rem;
+  overflow: hidden;
+  position: absolute;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  width: 1rem;
+  z-index: 1;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: 1px 1px 0 #8e1816; }
+  /* line 120, ../sass/main.scss */
+  .icon:before, .icon:after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px; }
+  /* line 128, ../sass/main.scss */
+  .icon:before {
+    background-color: #8e1816;
+    left: 0;
+    top: 0; }
+  /* line 134, ../sass/main.scss */
+  .icon:after {
+    background-color: #d02320;
+    left: 1px;
+    top: 1px; }
+
+/* line 141, ../sass/main.scss */
 .copy-shell {
   background-image: url(../img/blur-bg.jpg);
   background-position: -20px -50px;
@@ -62,7 +104,7 @@ h2 {
   -ms-border-radius: 5px 5px 0 5px;
   -o-border-radius: 5px 5px 0 5px;
   border-radius: 5px 5px 0 5px; }
-  /* line 115, ../sass/main.scss */
+  /* line 153, ../sass/main.scss */
   .copy-shell:before {
     position: absolute;
     display: block;
@@ -80,12 +122,11 @@ h2 {
     -moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.35);
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.35); }
 
-/* line 127, ../sass/main.scss */
-.question {
+/* line 165, ../sass/main.scss */
+.question-shell {
   border-top: 1px solid white;
   border-left: 1px solid white;
   border-right: 1px solid white;
-  padding: 1rem;
   position: relative;
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0.5)));
   background-image: -webkit-linear-gradient(bottom, #ffffff, rgba(255, 255, 255, 0.5));
@@ -96,10 +137,25 @@ h2 {
   -moz-border-radius: 5px 5px 0 0;
   -ms-border-radius: 5px 5px 0 0;
   -o-border-radius: 5px 5px 0 0;
-  border-radius: 5px 5px 0 0;
-  text-shadow: 1px 1px 0 white; }
-  /* line 140, ../sass/main.scss */
-  .question:after {
+  border-radius: 5px 5px 0 0; }
+  /* line 175, ../sass/main.scss */
+  .question-shell h2 {
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 0 white; }
+  /* line 182, ../sass/main.scss */
+  .question-shell .timer {
+    background-color: rgba(208, 35, 32, 0.1);
+    border-right: 1px solid rgba(208, 35, 32, 0.25);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0; }
+  /* line 193, ../sass/main.scss */
+  .question-shell:after {
     position: absolute;
     display: block;
     content: "";
@@ -113,7 +169,7 @@ h2 {
     background-image: -o-linear-gradient(left, rgba(208, 35, 32, 0), rgba(208, 35, 32, 0.75), rgba(208, 35, 32, 0));
     background-image: linear-gradient(left, rgba(208, 35, 32, 0), rgba(208, 35, 32, 0.75), rgba(208, 35, 32, 0)); }
 
-/* line 150, ../sass/main.scss */
+/* line 203, ../sass/main.scss */
 ul.answer-shell {
   border-left: 1px solid white;
   border-bottom: 1px solid white;
@@ -130,7 +186,7 @@ ul.answer-shell {
   -ms-border-radius: 0 0 0 5px;
   -o-border-radius: 0 0 0 5px;
   border-radius: 0 0 0 5px; }
-  /* line 166, ../sass/main.scss */
+  /* line 219, ../sass/main.scss */
   ul.answer-shell:before, ul.answer-shell:after {
     position: absolute;
     display: block;
@@ -140,7 +196,7 @@ ul.answer-shell {
     top: 0;
     width: 3rem;
     z-index: 1; }
-  /* line 175, ../sass/main.scss */
+  /* line 228, ../sass/main.scss */
   ul.answer-shell:before {
     left: 0;
     background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0)));
@@ -148,7 +204,7 @@ ul.answer-shell {
     background-image: -moz-linear-gradient(left, #ffffff, rgba(255, 255, 255, 0));
     background-image: -o-linear-gradient(left, #ffffff, rgba(255, 255, 255, 0));
     background-image: linear-gradient(left, #ffffff, rgba(255, 255, 255, 0)); }
-  /* line 180, ../sass/main.scss */
+  /* line 233, ../sass/main.scss */
   ul.answer-shell:after {
     right: 0;
     background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, #ffffff), color-stop(100%, rgba(255, 255, 255, 0)));
@@ -156,7 +212,7 @@ ul.answer-shell {
     background-image: -moz-linear-gradient(right, #ffffff, rgba(255, 255, 255, 0));
     background-image: -o-linear-gradient(right, #ffffff, rgba(255, 255, 255, 0));
     background-image: linear-gradient(right, #ffffff, rgba(255, 255, 255, 0)); }
-  /* line 185, ../sass/main.scss */
+  /* line 238, ../sass/main.scss */
   ul.answer-shell li {
     background-color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
@@ -169,63 +225,24 @@ ul.answer-shell {
     background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
     background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
     background-image: linear-gradient(top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)); }
-    /* line 194, ../sass/main.scss */
+    /* line 247, ../sass/main.scss */
     ul.answer-shell li:hover {
       -webkit-transition: background-color 0.5s ease, background-image 0.5s ease;
       -moz-transition: background-color 0.5s ease, background-image 0.5s ease;
       -o-transition: background-color 0.5s ease, background-image 0.5s ease;
       transition: background-color 0.5s ease, background-image 0.5s ease;
       background-color: #e9706d; }
-    /* line 199, ../sass/main.scss */
+    /* line 252, ../sass/main.scss */
     ul.answer-shell li .icon {
-      color: white;
-      display: table;
-      height: 1rem;
-      left: 1rem;
-      overflow: hidden;
-      position: absolute;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-align: center;
-      width: 1rem;
-      z-index: 1;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      -ms-border-radius: 3px;
-      -o-border-radius: 3px;
-      border-radius: 3px;
-      text-shadow: 1px 1px 0 #8e1816; }
-      /* line 218, ../sass/main.scss */
-      ul.answer-shell li .icon:before, ul.answer-shell li .icon:after {
-        position: absolute;
-        display: block;
-        content: "";
-        height: 100%;
-        width: 100%;
-        z-index: -1;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        -ms-border-radius: 3px;
-        -o-border-radius: 3px;
-        border-radius: 3px; }
-      /* line 226, ../sass/main.scss */
-      ul.answer-shell li .icon:before {
-        background-color: #8e1816;
-        left: 0;
-        top: 0; }
-      /* line 232, ../sass/main.scss */
-      ul.answer-shell li .icon:after {
-        background-color: #d02320;
-        left: 1px;
-        top: 1px; }
-    /* line 239, ../sass/main.scss */
+      left: 1rem; }
+    /* line 256, ../sass/main.scss */
     ul.answer-shell li .copy {
       padding: 0 0 0 3rem;
       position: absolute;
       left: 0;
       width: auto;
       text-shadow: 1px 1px 0 white; }
-    /* line 247, ../sass/main.scss */
+    /* line 264, ../sass/main.scss */
     ul.answer-shell li .results {
       display: none;
       padding: 0 0 0 3rem;
@@ -233,7 +250,7 @@ ul.answer-shell {
       height: 2.4rem;
       left: 0;
       width: 580px; }
-      /* line 257, ../sass/main.scss */
+      /* line 274, ../sass/main.scss */
       ul.answer-shell li .results .bar {
         display: inline-block;
         height: 1rem;
@@ -245,7 +262,7 @@ ul.answer-shell {
         -ms-border-radius: 3px;
         -o-border-radius: 3px;
         border-radius: 3px; }
-        /* line 266, ../sass/main.scss */
+        /* line 283, ../sass/main.scss */
         ul.answer-shell li .results .bar:before, ul.answer-shell li .results .bar:after {
           position: absolute;
           display: block;
@@ -258,35 +275,30 @@ ul.answer-shell {
           -ms-border-radius: 3px;
           -o-border-radius: 3px;
           border-radius: 3px; }
-        /* line 274, ../sass/main.scss */
+        /* line 291, ../sass/main.scss */
         ul.answer-shell li .results .bar:before {
           background-color: #8e1816;
           left: 0;
           top: 0; }
-        /* line 280, ../sass/main.scss */
+        /* line 297, ../sass/main.scss */
         ul.answer-shell li .results .bar:after {
           background-color: #d02320;
           left: 1px;
           top: 1px; }
-      /* line 287, ../sass/main.scss */
+      /* line 304, ../sass/main.scss */
       ul.answer-shell li .results .number {
         display: inline-block;
         padding: 0 0 0 1rem;
         filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
         opacity: 0;
         text-shadow: 1px 1px 0 white; }
-        /* line 293, ../sass/main.scss */
+        /* line 310, ../sass/main.scss */
         ul.answer-shell li .results .number span.percentage {
           font-size: 0.5rem; }
 
-/* line 301, ../sass/main.scss */
+/* line 318, ../sass/main.scss */
 .logo-shell {
   background-color: #d02320;
-  /*border: {
-  	bottom: 1px solid $colLyt;
-  	right: 1px solid $colLyt;
-  }*/
-  height: 2.4rem;
   position: absolute;
   right: 20px;
   width: auto;
@@ -316,7 +328,7 @@ ul.answer-shell {
   	right: 100%;
   	fill: $col;
   }*/ }
-  /* line 329, ../sass/main.scss */
+  /* line 342, ../sass/main.scss */
   .logo-shell span.tag-line {
     color: white;
     display: inline-block;
@@ -326,7 +338,7 @@ ul.answer-shell {
     position: relative;
     text-transform: uppercase;
     text-shadow: 1px 1px 0 #8e1816; }
-    /* line 342, ../sass/main.scss */
+    /* line 355, ../sass/main.scss */
     .logo-shell span.tag-line:after {
       position: absolute;
       display: block;
@@ -340,19 +352,43 @@ ul.answer-shell {
       background-image: -moz-linear-gradient(top, rgba(233, 112, 109, 0), #e9706d, rgba(233, 112, 109, 0));
       background-image: -o-linear-gradient(top, rgba(233, 112, 109, 0), #e9706d, rgba(233, 112, 109, 0));
       background-image: linear-gradient(top, rgba(233, 112, 109, 0), #e9706d, rgba(233, 112, 109, 0)); }
-  /* line 352, ../sass/main.scss */
+  /* line 365, ../sass/main.scss */
   .logo-shell img.logo {
     height: 2.4rem;
     padding: 0.5rem 0.5rem 0.5rem 1.5rem;
     width: auto; }
-  /* line 365, ../sass/main.scss */
-  .logo-shell .cap {
-    display: block;
-    position: absolute;
-    height: 2.4rem;
-    right: 100%;
+  /* line 378, ../sass/main.scss */
+  .logo-shell svg.cap {
     bottom: 0;
-    width: auto; }
-    /* line 373, ../sass/main.scss */
-    .logo-shell .cap path {
+    display: block;
+    height: 2.4rem;
+    position: absolute;
+    right: 100%;
+    width: 3.07rem; }
+    /* line 387, ../sass/main.scss */
+    .logo-shell svg.cap path {
       fill: #d02320; }
+
+/* line 393, ../sass/main.scss */
+.advert-shell {
+  background-color: rgba(255, 255, 255, 0.75);
+  display: none;
+  height: 100%;
+  left: 0;
+  min-height: 300px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0; }
+  /* line 405, ../sass/main.scss */
+  .advert-shell .icon {
+    cursor: pointer;
+    right: 1rem;
+    top: 1rem; }
+  /* line 411, ../sass/main.scss */
+  .advert-shell a.call-to-action img {
+    height: auto;
+    margin: 40px;
+    width: 540px; }

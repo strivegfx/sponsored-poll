@@ -100,6 +100,44 @@ h2{
 	margin: 0;
 }
 
+.icon{
+	color: white;
+	display: table;
+	height: 1rem;
+	overflow: hidden;
+	position: absolute;
+	font: {
+		size: 0.75rem;
+		weight: 700;
+	}
+	text-align: center;
+	//vertical-align: middle;
+	width: 1rem;
+	z-index: 1;
+	@include border-radius(3px);
+	@include text-shadow(1px 1px 0 $colDrk);
+
+	&:before, &:after{
+		@include pseudo;
+		height: 100%;
+		width: 100%;
+		z-index: -1;
+		@include border-radius(3px);
+	}
+
+	&:before{
+		background-color: $colDrk;
+		left: 0;
+		top: 0;
+	}
+
+	&:after{
+		background-color: $col;
+		left: 1px;
+		top: 1px;
+	}
+}
+
 .copy-shell{
 	background: {
 		image: url(../img/blur-bg.jpg);
@@ -124,18 +162,33 @@ h2{
 	}
 }
 
-.question{
-	//background-color: red;
+.question-shell{
 	border: {
 		top: 1px solid white;
 		left: 1px solid white;
 		right: 1px solid white;
 	}
-	padding: 1rem;
 	position: relative;
 	@include background-image(linear-gradient(bottom, white, rgba(white, 0.5)));
 	@include border-radius($cnrRad $cnrRad 0 0);
-	@include text-shadow(1px 1px 0 white);
+
+	h2{
+		padding: 1rem;
+		position: relative;
+		z-index: 1;
+		@include text-shadow(1px 1px 0 white);
+	}
+
+	.timer{
+		background-color: rgba($col, 0.1);
+		border-right: 1px solid rgba($col, 0.25);
+		display: none; // will be shown via javascript before extending
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 0; // will be extended via TweenMax to 100% 
+	}
 
 	&:after{
 		@include pseudo;
@@ -197,43 +250,7 @@ ul.answer-shell{
 		}
 
 		.icon{
-			//background-color: $colDrk;
-			color: white;
-			display: table;
-			height: 1rem;
 			left: 1rem;
-			overflow: hidden;
-			position: absolute;
-			font: {
-				size: 0.75rem;
-				weight: 700;
-			}
-			text-align: center;
-			//vertical-align: middle;
-			width: 1rem;
-			z-index: 1;
-			@include border-radius(3px);
-			@include text-shadow(1px 1px 0 $colDrk);
-
-			&:before, &:after{
-				@include pseudo;
-				height: 100%;
-				width: 100%;
-				z-index: -1;
-				@include border-radius(3px);
-			}
-
-			&:before{
-				background-color: $colDrk;
-				left: 0;
-				top: 0;
-			}
-
-			&:after{
-				background-color: $col;
-				left: 1px;
-				top: 1px;
-			}
 		}
 
 		.copy{
@@ -300,11 +317,7 @@ ul.answer-shell{
 
 .logo-shell{
 	background-color: $col;
-	/*border: {
-		bottom: 1px solid $colLyt;
-		right: 1px solid $colLyt;
-	}*/
-	height: 2.4rem;
+	// height: 2.4rem; // having a forded height ehre bumps the total shell height 1px too much??? which makes the svg cap not flush
 	position: absolute;
 	right: 20px;
 	width: auto;
@@ -362,13 +375,14 @@ ul.answer-shell{
 		fill: $col;
 	}*/
 
-	.cap{
-		display: block;
-		position: absolute;
-		height: 2.4rem;
-		right: 100%;
+	svg.cap{
+		//background-color: blue;
 		bottom: 0;
-		width: auto;
+		display: block;
+		height: 2.4rem;
+		position: absolute;
+		right: 100%;
+		width: 3.07rem;
 
 		path{
 			fill: $col;
@@ -376,7 +390,30 @@ ul.answer-shell{
 	}
 }
 
+.advert-shell{
+	background-color: rgba(white, 0.75);
+	display: none;
+	height: 100%;
+	left: 0;
+	min-height: 300px;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	z-index: 10; // always on top! --> will be shown via javascript
+	@include opacity(0);
 
+	.icon{
+		cursor: pointer;
+		right: 1rem;
+		top: 1rem;
+	}
+
+	a.call-to-action img{
+		height: auto;
+		margin: 40px;
+		width: 540px;
+	}
+}
 
 
 
