@@ -234,15 +234,16 @@ ul.answer-shell {
       background-color: #e9706d; }
     /* line 252, ../sass/main.scss */
     ul.answer-shell li .icon {
-      left: 1rem; }
-    /* line 256, ../sass/main.scss */
+      left: 1rem;
+      text-transform: uppercase; }
+    /* line 257, ../sass/main.scss */
     ul.answer-shell li .copy {
       padding: 0 0 0 3rem;
       position: absolute;
       left: 0;
       width: auto;
       text-shadow: 1px 1px 0 white; }
-    /* line 264, ../sass/main.scss */
+    /* line 265, ../sass/main.scss */
     ul.answer-shell li .results {
       display: none;
       padding: 0 0 0 3rem;
@@ -250,7 +251,7 @@ ul.answer-shell {
       height: 2.4rem;
       left: 0;
       width: 580px; }
-      /* line 274, ../sass/main.scss */
+      /* line 275, ../sass/main.scss */
       ul.answer-shell li .results .bar {
         display: inline-block;
         height: 1rem;
@@ -262,7 +263,7 @@ ul.answer-shell {
         -ms-border-radius: 3px;
         -o-border-radius: 3px;
         border-radius: 3px; }
-        /* line 283, ../sass/main.scss */
+        /* line 284, ../sass/main.scss */
         ul.answer-shell li .results .bar:before, ul.answer-shell li .results .bar:after {
           position: absolute;
           display: block;
@@ -275,28 +276,28 @@ ul.answer-shell {
           -ms-border-radius: 3px;
           -o-border-radius: 3px;
           border-radius: 3px; }
-        /* line 291, ../sass/main.scss */
+        /* line 292, ../sass/main.scss */
         ul.answer-shell li .results .bar:before {
           background-color: #8e1816;
           left: 0;
           top: 0; }
-        /* line 297, ../sass/main.scss */
+        /* line 298, ../sass/main.scss */
         ul.answer-shell li .results .bar:after {
           background-color: #d02320;
           left: 1px;
           top: 1px; }
-      /* line 304, ../sass/main.scss */
+      /* line 305, ../sass/main.scss */
       ul.answer-shell li .results .number {
         display: inline-block;
         padding: 0 0 0 1rem;
         filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
         opacity: 0;
         text-shadow: 1px 1px 0 white; }
-        /* line 310, ../sass/main.scss */
+        /* line 311, ../sass/main.scss */
         ul.answer-shell li .results .number span.percentage {
           font-size: 0.5rem; }
 
-/* line 318, ../sass/main.scss */
+/* line 319, ../sass/main.scss */
 .logo-shell {
   background-color: #d02320;
   position: absolute;
@@ -328,7 +329,7 @@ ul.answer-shell {
   	right: 100%;
   	fill: $col;
   }*/ }
-  /* line 342, ../sass/main.scss */
+  /* line 343, ../sass/main.scss */
   .logo-shell span.tag-line {
     color: white;
     display: inline-block;
@@ -338,7 +339,7 @@ ul.answer-shell {
     position: relative;
     text-transform: uppercase;
     text-shadow: 1px 1px 0 #8e1816; }
-    /* line 355, ../sass/main.scss */
+    /* line 356, ../sass/main.scss */
     .logo-shell span.tag-line:after {
       position: absolute;
       display: block;
@@ -352,12 +353,12 @@ ul.answer-shell {
       background-image: -moz-linear-gradient(top, rgba(233, 112, 109, 0), #e9706d, rgba(233, 112, 109, 0));
       background-image: -o-linear-gradient(top, rgba(233, 112, 109, 0), #e9706d, rgba(233, 112, 109, 0));
       background-image: linear-gradient(top, rgba(233, 112, 109, 0), #e9706d, rgba(233, 112, 109, 0)); }
-  /* line 365, ../sass/main.scss */
+  /* line 366, ../sass/main.scss */
   .logo-shell img.logo {
     height: 2.4rem;
     padding: 0.5rem 0.5rem 0.5rem 1.5rem;
     width: auto; }
-  /* line 378, ../sass/main.scss */
+  /* line 379, ../sass/main.scss */
   .logo-shell svg.cap {
     bottom: 0;
     display: block;
@@ -365,11 +366,11 @@ ul.answer-shell {
     position: absolute;
     right: 100%;
     width: 3.07rem; }
-    /* line 387, ../sass/main.scss */
+    /* line 388, ../sass/main.scss */
     .logo-shell svg.cap path {
       fill: #d02320; }
 
-/* line 393, ../sass/main.scss */
+/* line 394, ../sass/main.scss */
 .advert-shell {
   background-color: rgba(255, 255, 255, 0.75);
   display: none;
@@ -382,12 +383,12 @@ ul.answer-shell {
   z-index: 10;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0; }
-  /* line 405, ../sass/main.scss */
+  /* line 406, ../sass/main.scss */
   .advert-shell .icon {
     cursor: pointer;
     right: 1rem;
     top: 1rem; }
-  /* line 411, ../sass/main.scss */
+  /* line 412, ../sass/main.scss */
   .advert-shell a.call-to-action img {
     height: auto;
     margin: 40px;

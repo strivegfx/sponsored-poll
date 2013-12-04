@@ -6,12 +6,48 @@ $(document).ready(function(){
 
 	var $m = {
 
+		getJson : function(){
+
+			/* 
+			 * json has been validated here...
+			 * ---> http://jsonlint.com/
+			 *
+			 * and minified here...
+			 * ---> http://bigaqua.org/minify_json.html
+			 *
+			 */
+
+			$.getJSON('js/poll-data.json', function($json){
+
+				$m.s.json = $json;
+
+			}).success(function() {
+
+				/* alert("success"); */
+
+			}).error(function() {
+
+				/*alert("error");*/
+
+				$m.jsonErr(); // run json error function...
+
+			}).complete(function() {
+
+				/*alert("got JSON");*/
+
+				$m.init(); // generate table data...
+
+			});
+
+		}, // end of getJson fnc
+
 		init : function(){
 
 			var $mod = $('.module'); // get module reference from the DOM
 
 			$m.s.ltIe9 = $m.ltIe9(); // tests for IE8 and under...
 			//$m.inputType.listeners.mouse(); // touch is set as tue initially... this listener waits for mouse interaction
+			$m.appendJson($mod);
 			$m.answers.init($mod);
 			$m.advert.init($mod);
 
@@ -125,21 +161,51 @@ $(document).ready(function(){
 
 		}, // end of inputType obj
 
+		appendJson : function($mod){
+
+			var $cpy = $mod.find('.copy-shell'), // find the copy-shell DOM reference
+				$que = $mod.find('.question-shell'), // find the question-shell DOM reference
+				$ans = $cpy.find('ul.answer-shell'), // find the answer-shell DOM reference
+				$json = $m.s.json, // get the json data from the global settings
+				$len = $json.answer.length, // find out how many answers there are in the json data
+				$alp = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'], // an array to convery answer numbers into there corrorsponding alphabet conterpart
+				$html = ''; // shell to store the generated answer html content in...
+
+			$m.s.dom.cpy = $cpy; // store the copy-shell in the global settings
+			$m.s.dom.que = $que; // store the question-shell in the global settings
+			$m.s.dom.ans = $ans; // store the answer-shell in the global settings
+			$m.s.len = $len; // store the json length in the global settings
+
+			$que.find('h2').text($json.question); // insert the question text into the DOM
+
+			for(var $i = 0; $i < $len; $i++){ // loop through the answers in the json data and populate insid the $html variable...
+
+				$html +=    '<li data-num="' + $i + '">' + // give the answer a reference to the json data
+								'<div class="icon">' + $alp[$i] + '</div>' + // insert in the alphabet character for the icon
+								'<div class="copy">' + $json.answer[$i] + '</div>' + // insert the current anseer in the json file
+								'<div class="results">' +
+									'<div class="bar"></div>' +
+									'<div class="number"><span class="dynamic"></span><span class="percentage">%</span></div>' +
+								'</div>' +
+							'</li>';
+
+			} // end of for loop
+
+			$ans.html($html); // insert generated answer html into the DOM
+
+		}, // end of appendJson
+
 		answers : {
 
-			init : function($mod){
+			init : function(){
 
-				var $cpy = $mod.find('.copy-shell'),
-					$ans = $cpy.find('ul.answer-shell'); // find the answer-shell DOM reference
-
-				$m.s.dom.cpy = $cpy; // store the copy-shell in the global settings
-				$m.s.dom.ans = $ans; // store the answer-shell in the global settings
-
-				$m.answers.listeners($ans); // add in the event listeners
+				$m.answers.listeners(); // add in the event listeners
 
 			}, // end of init fnc
 
-			listeners : function($ans){
+			listeners : function(){
+
+				var $ans = $m.s.dom.ans;
 
 				$ans.on('click', 'li', function(){
 
@@ -201,7 +267,8 @@ $(document).ready(function(){
 
 					var $cpy = $m.s.dom.cpy,
 						$ani = 2 * $len, // animation speed of the timer... timer will take one second for each answer in the design...
-						$tmr = $cpy.find('.question-shell').find('.timer'); // get the timer DOM reference
+						$que = $m.s.dom.que, // get the DOM reference from the global settings
+						$tmr = $que.find('.timer'); // get the timer DOM reference
 
 					$tmr.css({'display' : 'block'});
 
@@ -302,7 +369,7 @@ $(document).ready(function(){
 
 					// GET THE RESULTS FROM PHP DOC THAT COUNTS THE SUBMISSIONS
 
-					var $len = 3, // get the length from the settings that will already be found out when populating the data initially...
+					var $len = $m.s.len, // get the json length from the global settings
 						$li; // null to populate the current <li> during the for loop...
 
 					for(var $i = 0; $i < $len; $i++){
@@ -453,7 +520,7 @@ $(document).ready(function(){
 
 	(function(){
 
-		$m.init();
+		$m.getJson();
 
 	})();
 

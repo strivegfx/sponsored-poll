@@ -32,7 +32,7 @@
             <div class="copy-shell">
 
                 <div class="question-shell">
-                    <h2>This is a question....</h2>
+                    <h2></h2>
                     <div class="timer"></div>
                 </div>
 
